@@ -1,0 +1,79 @@
+# depslib dependency file v1.0
+1328509483 source:e:\github\for-cplusplus-template\test2\smallobj.cpp
+	"..\loki\SmallObj.h"
+	<limits.h>
+	<cassert>
+	<algorithm>
+
+1032075078 e:\github\for-cplusplus-template\loki\smallobj.h
+	"Reference/SmallObj.h"
+	"Reference/SmallObj.h"
+	"Reference/SmallObj.h"
+	"Borland/SmallObj.h"
+	"MSVC/1300/SmallObj.h"
+	"MSVC/1200/SmallObj.h"
+	"Reference/SmallObj.h"
+
+1328495074 e:\github\for-cplusplus-template\loki\reference\smallobj.h
+	"Threads.h"
+	"Singleton.h"
+	<cstddef>
+	<vector>
+
+1328493113 e:\github\for-cplusplus-template\loki\reference\threads.h
+
+1029023386 e:\github\for-cplusplus-template\loki\reference\singleton.h
+	"Threads.h"
+	<algorithm>
+	<stdexcept>
+	<cassert>
+	<cstdlib>
+	<new>
+
+1030065662 e:\github\for-cplusplus-template\loki\borland\smallobj.h
+	"Threads.h"
+	"Singleton.h"
+	<cstddef>
+	<vector>
+
+1030065662 e:\github\for-cplusplus-template\loki\borland\threads.h
+	<windows.h>
+	<cassert>
+
+1030065662 e:\github\for-cplusplus-template\loki\borland\singleton.h
+	"Threads.h"
+	<algorithm>
+	<stdexcept>
+	<cassert>
+	<cstdlib>
+	<new>
+	<string>
+
+1029353866 e:\github\for-cplusplus-template\loki\msvc\1300\smallobj.h
+	"Threads.h"
+	"Singleton.h"
+	<cstddef>
+	<vector>
+
+1029353866 e:\github\for-cplusplus-template\loki\msvc\1300\threads.h
+
+1029353866 e:\github\for-cplusplus-template\loki\msvc\1300\singleton.h
+	"Threads.h"
+	<algorithm>
+	<stdexcept>
+	<cassert>
+	<cstdlib>
+	<new>
+
+1328510674 source:e:\github\for-cplusplus-template\test2\singleton.cpp
+	"..\loki\Singleton.h"
+
+1032075078 e:\github\for-cplusplus-template\loki\singleton.h
+	"Reference/Singleton.h"
+	"Reference/Singleton.h"
+	"Reference/Singleton.h"
+	"Borland/Singleton.h"
+	"MSVC/1300/Singleton.h"
+	"MSVC/1200/Singleton.h"
+	"Reference/Singleton.h"
+
