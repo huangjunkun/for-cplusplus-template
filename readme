@@ -4,8 +4,192 @@
 ** author:        junkun huang
 ** e-mail:        huangjunkun@gmail.com
 ** declare: 
-  该工程存放内容说明，在学习《Modern C++ Design》（中文名《C++ 设计新思维》）过程中，编写的测试性和研究性的代码。欢迎交流，谢谢！
-  实验环境说明： Windows + CodeBlocks + MinGW
-  btw. 遗失了一部分啊，>_< ...
+  项目for-cplusplus-template存放内容说明：在学习《Modern C++ Design》（中文名《C++ 设计新思维》）过程中，
+  编写的测试性和研究性的代码。
+  cb-pro.cbp	-- 测试工程文件，你可以用CodeBlocks打开。可加载test1或test2文件的测试程序。
+  loki\			-- 程序有时会使用到的loki库。
+  test1\		-- 测试程序1，该文件夹包含若干源文件。
+  test2\		-- 测试程序2，该文件夹包含若干源文件。
+  
+  btw. 程序代码貌似遗失了一部分啊，>_< ...
+  实验环境说明： Windows + CodeBlocks10.05
+
+  
+  关于该书籍的介绍详见豆瓣 http://book.douban.com/subject/1119904/
+  ==>>
+	我的评价:  推荐 * * * *
+	标签: C++ 设计模式 泛型 编程 模板编程
+	我的评论
+	关于这本书的牛逼就不多言了随便网上搜搜就知道了，但也有人反感之。以前大学时候读过这本书，大二大三期间来回读了三遍才体会书中很多的精髓，
+	犹记得当时看书经常有过兴奋的快感（噢…C++原来可以这样子啊），过程中也写了不少测试性的代码，主要服务于学习，体验与研究C++泛型编程。
+	正好这几天回头翻翻这本书，也复习些C++的泛型编程，同时整理之前的陈旧的学习代码，
+	放到了Github（https://github.com/huangjunkun/for-cplusplus-template）！
+	 
+	 欢迎交流，谢谢！
 **/
 			《Modern C++ Design》点滴
+	... 详见源码吧 ...
+	对应的知识点，可以参考以下目录或阅读书籍或阅读Loki源码。			
+
+附：
+	## 《Modern C++ Design》目录结构
+第一篇 技术（Techniques）
+第 1章以 Policy为基础的 Class设计（Policy-Based Class Design）
+1.1 软件设计的多样性（Multiplicity）
+1.2 全功能型（Do-It-All）接口的失败
+1.3 多重继承（Multiple Inheritance）是救世主？
+1.4 Templates 带来曙光
+1.5 Policies 和 Policy Classes 
+1.6 更丰富的 Policies 
+1.7 Policy Classes 的解构式（Destructors）
+1.8 透过不完全具现化（Incomplete Instantiation）
+          而获得的选择性机能（Optional Functionality）
+1.9 结合 Policy Classes 
+1.10 以 Policy Classes 订制结构
+1.11 Policies 的兼容性
+1.12 将一个 Class分解为一堆 Policies 
+1.13 摘要
+
+第 2章技术（Techniques）
+2.1 编译期（Compile-Time）Assertions 
+2.2 Partial Template Specialization（范本偏特化）
+2.3 区域类别（Local Classes）
+2.4 常整数映射为型别（Mapping Integral Constants to Types）
+2.5 型别对型别的映射（Type-to-Type Mapping）
+2.6 型别选择（Type Selection）
+2.7 编译期间侦测可转换性（Convertibility）和继承性（Inheritance）
+2.8 type_info的一个外覆类别（Wrapper）
+2.9 NullType 和 EmptyType 
+2.10 Type Traits 
+2.11 摘要
+第 3章 Typelists 
+3.1 Typelists 的必要性 
+3.2 定义 Typelists 
+3.3 将 Typelist 的生成线性化（linearizing）
+3.4 计算长度
+3.5 间奏曲
+3.6 索引式存取（Indexed Access）
+3.7 搜寻 Typelists 
+3.8 附加元素至 Typelists 
+3.9 移除 Typelist 中的某个元素
+3.10 移除重复元素（Erasing Duplicates）
+3.11 取代 Typelist 中的某个元素
+3.12 为 Typelists 局部更换次序（Partially Ordering）
+3.13 运用 Typelists 自动产生 Classes 
+3.14 摘要
+3.15 Typelist 要点概览
+第 4章 小型对象配置技术（Small-Object Allocation）
+4.1 默认的 Free Store 配置器
+4.2 内存配置器的工作方式
+4.3 小型对象配置器（Small-Object Allocator）
+4.4 Chunks（大块内存）
+4.5 大小一致（Fixed-Size）的配置器
+4.6 SmallObjAllocator Class 
+4.7 帽子下的戏法
+4.8 简单，复杂，终究还是简单
+4.9 使用细节
+4.10 摘要
+4.11 小型对象配置器（Small-Object Allocator）要点概览
+第二篇 组件（Components）
+第 5章泛化仿函式（Generalized Functors）
+5.1 Command 设计范式
+5.2 真实世界中的 Command 
+5.3 C++ 中的可呼叫体（Callable Entities）
+5.4 Functor Class Template 骨干
+5.5 实现「转发式」（Forwarding）Functor::operator() 
+5.6 处理仿函式
+5.7 做一个，送一个
+5.8 自变量（Argument）和回返型别（Return Type）的转换
+5.9 处理 pointer to member function（成员函式指标）
+5.10 系结（Binding）
+5.11 将请求串接起来（Chaining Requests）
+5.12 现实世界中的问题之 1：转发式函式的成本
+5.13 现实世界中的问题之 2：Heap 配置
+5.14 透过 Functor实现 Undo和 Redo 
+5.15 摘要
+5.16 Functor要点概览
+第 6章 Singletons（单件）实作技术
+6.1 静态数据 + 静态函式 != Singleton 
+6.2 用以支持 Singleton的一些 C++ 基本手法
+6.3 实施「Singleton的唯一性」
+6.4 摧毁 Singleton 
+6.5 Dead（失效的）Reference 问题
+6.6 解决 Dead Reference问题（I）：Phoenix Singleton 
+6.7 解决 Dead Reference问题（II）：带寿命的 Singletons 
+6.8 实现「带寿命的 Singletons」
+6.9 生活在多绪世界
+6.10 将一切组装起来
+6.11 使用 SingletonHolder 
+6.12 摘要
+6.13 SingletonHolder Class Template 要点概览
+第 7章 Smart Pointers（精灵指标）
+7.1 Smart Pointers 基础
+7.2 交易
+7.3 Smart Pointers 的储存
+7.4 Smart Pointer的成员函式
+7.5 拥有权（Ownership）管理策略
+7.6 Address-of（取址）运算符
+7.7 隐式转换（Implicit Conversion）至原始指标型别
+7.8 相等性（Equality）和不等性（Inequality）
+7.9 次序比较（Ordering Comparisons）
+7.10 检测及错误报告（Checking and Error Reporting）
+7.11 Smart Pointers to const和 const Smart Pointers 
+7.12 Arrays 
+7.13 Smart Pointers 和多绪（Multithreading）
+7.14 将一切组装起来
+7.15 摘要
+7.16 SmartPtr要点概览
+第 8章 Object Factories（物件工厂）
+8.1 为什么需要 Object Factories 
+8.2 Object Factories in C++：Classes 和 Objects 
+8.3 实现一个 Object Factory 
+8.4 型别标识符号（Type Identifiers）
+8.5 泛化（Generalization）
+8.6 细节琐务
+8.7 Clone Factories（复制工厂、翻制工厂、克隆工厂）
+8.8 透过其他泛型组件来使用 Object Factories 
+8.9 摘要
+8.10 Factory Class Template 要点概览
+8.11 CloneFactory Class Template 要点概览
+第 9章 Abstract Factory（抽象工厂）
+9.1 Abstract Factory扮演的架构角色（Architectural role）
+9.2 一个泛化的 Abstract Factory界面
+9.3 实作出 AbstractFactory 
+9.4 一个 Prototype-Based Abstract Factory实作品
+9.5 摘要
+9.6 AbstractFactory和 ConcreteFactory要点概览
+第 10章 Visitor（访问者、视察者）
+10.1 Visitor 基本原理
+10.2 重载（Overloading）：Catch-All函式
+10.3 一份更加精炼的实作品：Acyclic Visitor 
+10.4 Visitor之泛型实作
+10.5 再论 "Cyclic" Visitor 
+10.6 变化手段
+10.7 摘要
+10.8 Visitor泛型组件要点概览
+第 11章 Multimethods 
+11.1 什么是 Multimethods? 
+11.2 何时需要 Multimethods？
+11.3 Double Switch-on-Type：暴力法
+11.4 将暴力法自动化
+11.5 暴力式 Dispatcher 的对称性
+11.6 对数型（Logarithmic）Double Dispatcher 
+11.7 FnDispatcher  和对称性
+11.8 Double Dispatch（双重分派）至仿函式（Functors）
+11.9 自变量的转型：static_cast或 dynamic_cast？
+11.10 常数时间的 Multimethods：原始速度（Raw Speed）
+11.11 将 BasicDispatcher 和 BasicFastDispatcher 当做 Policies 
+11.12 展望
+11.13 摘要
+11.14 Double Dispatcher要点概览
+附录 一个超迷你的多绪链接库（A Minimalist Multithreading Library）
+A.1 多绪的反思
+A.2 Loki 的作法
+A.3 整数型别上的原子操作（Atomic Operations）
+A.4 Mutexes（互斥器）
+A.5 面向对象程序设计中的锁定语意（Locking Semantics）
+A.6 可有可无的（Optional）volatile 饰词
+A.7 Semaphores, Events 和其他好东西
+A.8 摘要
+参考书目（Bibliography）
+索引（Index）
